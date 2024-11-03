@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://tu_usuario.github.io/nombre_del_repositorio",
+  "homepage": "https://frankvaldezquedo.github.io/Curriculum/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
