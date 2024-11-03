@@ -3,6 +3,9 @@ import react from '@vitejs/plugin-react-swc'
 
 // https://vite.dev/config/
 export default defineConfig({
+  base: '/Curriculum/',
   plugins: [react()],
-  base: 'https://frankvaldezquedo.github.io/Curriculum/',
+  build: {
+    outDir: 'build'
+  }
 })
