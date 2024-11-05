@@ -169,11 +169,11 @@ const Body = () => {
                     },
                     {
                       platform: "linkedin",
-                      url: "https://linkedin.com/in/tu-usuario",
+                      url: "https://www.linkedin.com/in/fran-luis-valdez-quedo-a304012a7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
                     },
                     {
-                      platform: "twitter",
-                      url: "https://twitter.com/tu-usuario",
+                      platform: "whatsapp",
+                      url: "https://wa.me/51947989632",
                     },
                   ].map(({ platform, url }) => (
                     <a

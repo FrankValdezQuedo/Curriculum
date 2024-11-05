@@ -74,9 +74,25 @@ const Header = () => {
               </ul>
 
               <div className="d-flex social-icons ms-lg-3">
-                {["github", "linkedin", "twitter"].map((icon, index) => (
-                  <a href="#" className="social-icon mx-2" key={index}>
-                    <i className={`bi bi-${icon}`}></i>
+                {[
+                  {
+                    name: "github",
+                    url: "https://github.com/frankvaldezquedo",
+                  },
+                  {
+                    name: "linkedin",
+                    url: "https://www.linkedin.com/in/fran-luis-valdez-quedo-a304012a7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+                  },
+                  { name: "whatsapp", url: "https://wa.me/51947989632" },
+                ].map((icon, index) => (
+                  <a
+                    href={icon.url}
+                    className="social-icon mx-2"
+                    key={index}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <i className={`bi bi-${icon.name}`}></i>
                   </a>
                 ))}
               </div>
