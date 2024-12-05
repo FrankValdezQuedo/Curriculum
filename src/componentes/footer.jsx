@@ -108,15 +108,15 @@ const Footer = () => {
             <h5 className="mb-4 fw-bold">Contacto</h5>
             <div className="mb-3">
               <FontAwesomeIcon icon={faLocationDot} className="me-2" />
-              <span>123 Calle Principal, Ciudad, País</span>
+              <span>Santa Maria, Huacho, Perú</span>
             </div>
             <div className="mb-3">
               <FontAwesomeIcon icon={faPhone} className="me-2" />
-              <span>+1 234 567 890</span>
+              <span>+51 947 989 632</span>
             </div>
             <div className="mb-3">
               <FontAwesomeIcon icon={faEnvelope} className="me-2" />
-              <span>info@tuempresa.com</span>
+              <span>frank24111999@gmail.com</span>
             </div>
           </div>
         </div>
@@ -128,7 +128,7 @@ const Footer = () => {
           <div className="row py-4">
             <div className="col-md-6 text-center text-md-start">
               <p className="mb-0">
-                &copy; {new Date().getFullYear()} Tu Empresa. Todos los derechos
+                &copy; {new Date().getFullYear()} FLcode. Todos los derechos
                 reservados.
               </p>
             </div>

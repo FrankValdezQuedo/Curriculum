@@ -75,16 +75,19 @@ const SkillCard = ({ icon, title, description }) => (
 );
 
 // Project Card Component
-const ProjectCard = ({ imgSrc, title }) => (
+const ProjectCard = ({ imgSrc, title, description, link }) => (
   <div className="col-md-4">
-    <div className="card border-0 shadow-sm">
+    <div className="card border-0 shadow-sm h-100">
       <img src={imgSrc} className="card-img-top" alt={title} />
       <div className="card-body">
         <h5 className="card-title">{title}</h5>
-        <p className="card-text text-muted">
-          Descripción breve del proyecto y tecnologías utilizadas.
-        </p>
-        <a href="#" className="btn btn-outline-primary">
+        <p className="card-text text-muted">{description}</p>
+        <a
+          href={link}
+          className="btn btn-outline-primary"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Ver más
         </a>
       </div>
@@ -99,7 +102,7 @@ const Body = () => {
       icon: "code-slash",
       title: "Desarrollo Web",
       description:
-        "Especializado en React,Java(SpringBoot) Bootstrap y tecnologías frontend modernas.",
+        "Especializado en React, Java (Spring Boot), Bootstrap y tecnologías frontend modernas.",
     },
     {
       icon: "palette",
@@ -114,7 +117,28 @@ const Body = () => {
     },
   ];
 
-  const projects = [foto1, foto2, foto3];
+  const projects = [
+    {
+      imgSrc: foto1,
+      title: "Pagina web para gestión de Convenios Unjfsc",
+      description: "Sistema para gestionar los convenios de la Unjfsc - Huacho",
+      link: "https://github.com/FrankValdezQuedo/proyecto-convenios",
+    },
+    {
+      imgSrc: foto2,
+      title: "Página de Portafolio",
+      description:
+        "Mi portafolio web creado con React y Bootstrap para mostrar habilidades y proyectos.",
+      link: "https://github.com/FrankValdezQuedo/portfolio",
+    },
+    {
+      imgSrc: foto2,
+      title: "E-Commerce 3D",
+      description:
+        "Plataforma para la venta de productos impresos en 3D, desarrollada con Spring Boot.",
+      link: "https://github.com/FrankValdezQuedo/ecommerce-3d",
+    },
+  ];
 
   return (
     <main>
@@ -124,7 +148,6 @@ const Body = () => {
         <div className="container py-5 position-relative">
           <div className="row min-vh-75 align-items-center text-center">
             <div className="col-12">
-              {/* Profile Image Container */}
               <div className="position-relative d-inline-block mb-4">
                 <div
                   className="rounded-circle overflow-hidden"
@@ -134,8 +157,6 @@ const Body = () => {
                 </div>
                 <div style={styles.decorativeCircle}></div>
               </div>
-
-              {/* Text Content */}
               <div className="text-content" style={styles.textContent}>
                 <h1
                   className="display-4 fw-bold mb-3"
@@ -150,31 +171,33 @@ const Body = () => {
                   <button
                     className="btn btn-primary px-4 py-2"
                     style={styles.buttonPrimary}
+                    onClick={() => window.open("https://wa.me/51947989632")}
                   >
                     Contactar
                   </button>
                   <button
                     className="btn btn-light px-4 py-2"
                     style={styles.buttonLight}
+                    onClick={() =>
+                      window.open(
+                        "https://drive.google.com/file/d/1fNuOAndQmYFrFprwyAxRKY5pEY6zajFW/view?usp=drive_link"
+                      )
+                    }
                   >
                     Descargar CV
                   </button>
                 </div>
-
                 <div className="mt-4 d-flex justify-content-center gap-3">
                   {[
                     {
                       platform: "github",
-                      url: "https://github.com/",
+                      url: "https://github.com/FrankValdezQuedo",
                     },
                     {
                       platform: "linkedin",
-                      url: "https://www.linkedin.com/in/fran-luis-valdez-quedo-a304012a7?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+                      url: "https://www.linkedin.com/in/fran-luis-valdez-quedo-a304012a7",
                     },
-                    {
-                      platform: "whatsapp",
-                      url: "https://wa.me/51947989632",
-                    },
+                    { platform: "whatsapp", url: "https://wa.me/51947989632" },
                   ].map(({ platform, url }) => (
                     <a
                       href={url}
@@ -217,12 +240,8 @@ const Body = () => {
       <section id="proyectos" className="container py-5">
         <h2 className="text-center mb-5">Proyectos Destacados</h2>
         <div className="row g-4">
-          {projects.map((img, index) => (
-            <ProjectCard
-              key={index}
-              imgSrc={img}
-              title={`Proyecto ${index + 1}`}
-            />
+          {projects.map((project, index) => (
+            <ProjectCard key={index} {...project} />
           ))}
         </div>
       </section>
